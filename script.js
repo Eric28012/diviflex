@@ -1,75 +1,84 @@
-// 🔧 CONFIG — Número e mensagem padrão
-const WHATS_NUMBER = '5511999999999'; // Substitua pelo número real
-const WHATS_MSG = 'Olá, vim do site e quero um orçamento de divisória sanfonada.';
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   --------------------------------------------------------- */
+// Número do WhatsApp (com DDI + DDD, sem sinais)
+const WHATS_NUMBER = "5511992423233";
 
-function buildWhatsLink(extra=''){
-  const msg = encodeURIComponent(extra ? `${WHATS_MSG} ${extra}` : WHATS_MSG);
+// Mensagem padrão para o botão/link do WhatsApp
+const WHATS_MSG = "Olá, vim do site e gostaria de saber mais sobre as divisórias sanfonadas.";
+
+/* =========================================================
+   FUNÇÕES UTILITÁRIAS
+   --------------------------------------------------------- */
+/**
+ * Monta o link do WhatsApp com a mensagem padrão (+ extra opcional)
+ * @param {string} extra - Texto adicional (ex.: informações de UTM).
+ * @returns {string} URL formatada do WhatsApp
+ */
+function buildWhatsLink(extra = "") {
+  const base = WHATS_MSG + (extra ? ` ${extra}` : "");
+  const msg  = encodeURIComponent(base);
   return `https://wa.me/${WHATS_NUMBER}?text=${msg}`;
 }
 
-// Atualiza ano no footer
-const year = document.getElementById('year');
-if(year) year.textContent = new Date().getFullYear();
-
-// Aplica link do WhatsApp nos botões
-const links = [
-  document.getElementById('cta-whats-hero'),
-  document.getElementById('cta-whats-band'),
-  document.getElementById('wa-float'),
-  document.getElementById('footer-whats')
-];
-links.forEach(el => el && (el.href = buildWhatsLink()));
-
-// UTM forwarding
-const params = new URLSearchParams(window.location.search);
-if(params.toString()){
-  links.forEach(el => {
-    if(!el) return;
-    const tag = `\nUTM: ${decodeURIComponent(params.toString())}`;
-    el.href = buildWhatsLink(tag);
-  });
+/**
+ * Ajuda a buscar elementos por id, ignorando os que não existem
+ * @param {string[]} ids - lista de ids
+ * @returns {HTMLElement[]} elementos encontrados (existentes)
+ */
+function getElsById(ids = []) {
+  return ids
+    .map((id) => document.getElementById(id))
+    .filter((el) => Boolean(el));
 }
 
-// --- Carrossel de Logos (Swiper) ---
-// Configurações inspiradas no Elementor: 5 colunas desktop, 3 no mobile,
-// autoplay contínuo, loop infinito, sem navegação, velocidade suave.
-(function initLogosSwiper() {
-  const el = document.querySelector('.logos-swiper');
-  if (!el || typeof Swiper === 'undefined') return;
+/* =========================================================
+   INICIALIZAÇÕES GERAIS (executa após DOM pronto)
+   --------------------------------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+  // 1) Atualiza o ano no footer (se existir)
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  new Swiper('.logos-swiper', {
-    slidesPerView: 5,
-    spaceBetween: 24,
-    loop: true,
-    speed: 1500, // duração da transição (ms) — similar ao "speed" do Elementor
-    allowTouchMove: true,
-    autoplay: {
-      delay: 300,               // tempo entre *inícios* das transições
-      disableOnInteraction: false,
-      pauseOnMouseEnter: false, // equivalente a "pause_on_hover": no
-    },
-    // sem setas / paginação (navigation: none)
-    // breakpoints para mobile:
-    breakpoints: {
-      0:   { slidesPerView: 3, spaceBetween: 16 }, // mobile
-      600: { slidesPerView: 4, spaceBetween: 20 }, // tablets pequenos
-      920: { slidesPerView: 5, spaceBetween: 24 }, // desktop
-    }
-  });
-})();
+  // 2) Aplica o link do WhatsApp nos botões/links conhecidos
+  const whatsTargets = getElsById([
+    "cta-whats-hero",
+    "cta-whats-band",
+    "wa-float",
+    "footer-whats",
+  ]);
 
+  // Sem UTM (padrão)
+  whatsTargets.forEach((el) => (el.href = buildWhatsLink()));
 
-// --- Carrossel de Logos: movimento contínuo, colorido e maior ---
-(function initLogosSwiper() {
-  const el = document.querySelector('.logos-swiper');
-  if (!el || typeof Swiper === 'undefined') return;
+  // 3) Se a URL tiver parâmetros, inclui como "tag" na mensagem
+  const params = new URLSearchParams(window.location.search);
+  if (params.toString()) {
+    const tag = `\nUTM: ${decodeURIComponent(params.toString())}`;
+    whatsTargets.forEach((el) => (el.href = buildWhatsLink(tag)));
+  }
 
-  new Swiper('.logos-swiper', {
+  // 4) Inicializações de componentes
+  initLogosSwiper();
+  initTestimonialsSwiper();
+  initLightbox();
+  initCounters();
+  initMobileMenu();
+});
+
+/* =========================================================
+   SWIPER: LOGOS (carrossel contínuo suave)
+   --------------------------------------------------------- */
+function initLogosSwiper() {
+  const el = document.querySelector(".logos-swiper");
+  if (!el || typeof Swiper === "undefined") return;
+
+  new Swiper(".logos-swiper", {
     slidesPerView: 5,
     spaceBetween: 30,
     loop: true,
     allowTouchMove: false,
-    speed: 3000, // suave contínuo
+    speed: 3000, // movimento suave/contínuo
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
@@ -80,16 +89,18 @@ if(params.toString()){
       0:   { slidesPerView: 3, spaceBetween: 20 },
       600: { slidesPerView: 4, spaceBetween: 25 },
       920: { slidesPerView: 5, spaceBetween: 30 },
-    }
+    },
   });
-})();
+}
 
-// --- Carrossel de Depoimentos: 3 colunas desktop, 2 tablet, 1 mobile ---
-(function initTestimonialsSwiper() {
-  const el = document.querySelector('.testimonials-swiper');
-  if (!el || typeof Swiper === 'undefined') return;
+/* =========================================================
+   SWIPER: DEPOIMENTOS
+   --------------------------------------------------------- */
+function initTestimonialsSwiper() {
+  const el = document.querySelector(".testimonials-swiper");
+  if (!el || typeof Swiper === "undefined") return;
 
-  new Swiper('.testimonials-swiper', {
+  new Swiper(".testimonials-swiper", {
     slidesPerView: 3,
     spaceBetween: 30,
     loop: true,
@@ -103,73 +114,135 @@ if(params.toString()){
       0:   { slidesPerView: 1, spaceBetween: 10 },
       600: { slidesPerView: 2, spaceBetween: 14 },
       920: { slidesPerView: 3, spaceBetween: 20 },
+    },
+  });
+}
+
+/* =========================================================
+   LIGHTBOX SIMPLES (galeria)
+   --------------------------------------------------------- */
+function initLightbox() {
+  const thumbs = document.querySelectorAll("#galeria .thumb");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = lightbox ? lightbox.querySelector(".close") : null;
+
+  if (!thumbs.length || !lightbox || !lightboxImg || !lightboxClose) return;
+
+  // Abre lightbox ao clicar na miniatura
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener("click", (e) => {
+      e.preventDefault();
+      const src = thumb.getAttribute("href");
+      if (!src) return;
+      lightboxImg.src = src;
+      lightbox.style.display = "flex";
+    });
+  });
+
+  // Fecha ao clicar no X
+  lightboxClose.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  // Fecha ao clicar fora da imagem
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
     }
   });
-})();
+}
 
-// Lightbox simples
-document.querySelectorAll('#galeria .thumb').forEach(thumb => {
-  thumb.addEventListener('click', function(e) {
-    e.preventDefault();
-    const src = this.getAttribute('href');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = src;
-    lightbox.style.display = 'flex';
-  });
-});
-
-document.querySelector('#lightbox .close').addEventListener('click', () => {
-  document.getElementById('lightbox').style.display = 'none';
-});
-
-// Fechar com clique fora da imagem
-document.getElementById('lightbox').addEventListener('click', (e) => {
-  if (e.target.id === 'lightbox') {
-    e.target.style.display = 'none';
-  }
-});
-
-// ===== Contadores (IntersectionObserver + animação suave) =====
-(function initCounters(){
-  const counters = document.querySelectorAll('.counter-num');
+/* =========================================================
+   CONTADORES (IntersectionObserver + animação easeOutCubic)
+   --------------------------------------------------------- */
+function initCounters() {
+  const counters = document.querySelectorAll(".counter-num");
   if (!counters.length) return;
 
   const animate = (el) => {
-    const target = parseInt(el.getAttribute('data-target') || '0', 10);
-    const duration = parseInt(el.getAttribute('data-duration') || '1500', 10);
-    const start = 0;
+    const target = parseInt(el.getAttribute("data-target") || "0", 10);
+    const duration = parseInt(el.getAttribute("data-duration") || "1500", 10);
     const startTime = performance.now();
 
-    const formatter = (n) => {
-      // formata com milhar para o caso de 10.000
-      return n.toLocaleString('pt-BR');
-    };
+    const format = (n) => n.toLocaleString("pt-BR");
 
     const tick = (now) => {
-      const progress = Math.min((now - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-      const value = Math.round(start + (target - start) * eased);
-      el.textContent = formatter(value);
-      if (progress < 1) requestAnimationFrame(tick);
+      const t = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+      const value = Math.round(target * eased);
+      el.textContent = format(value);
+      if (t < 1) requestAnimationFrame(tick);
     };
 
     requestAnimationFrame(tick);
   };
 
-  const once = new WeakSet();
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !once.has(entry.target)) {
-        once.add(entry.target);
-        animate(entry.target);
-      }
-    });
-  }, { threshold: 0.35 });
+  const seen = new WeakSet();
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !seen.has(entry.target)) {
+          seen.add(entry.target);
+          animate(entry.target);
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
 
-  counters.forEach(c => io.observe(c));
-})();
+  counters.forEach((c) => io.observe(c));
+}
 
-document.getElementById("nav-toggle").addEventListener("click", function () {
-  document.getElementById("nav-menu").classList.toggle("active");
-});
+/* =========================================================
+   MENU MOBILE (toggle, clique-fora, ESC, resize, no-scroll)
+   --------------------------------------------------------- */
+function initMobileMenu() {
+  const toggle = document.getElementById("nav-toggle");
+  const menu   = document.getElementById("nav-menu");
+  if (!toggle || !menu) return;
+
+  const open = () => {
+    menu.classList.add("active");
+    toggle.setAttribute("aria-expanded", "true");
+    document.body.classList.add("no-scroll");
+  };
+  const close = () => {
+    menu.classList.remove("active");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("no-scroll");
+  };
+
+  // Estado inicial do botão ARIA
+  toggle.setAttribute("aria-controls", "nav-menu");
+  toggle.setAttribute(
+    "aria-expanded",
+    menu.classList.contains("active") ? "true" : "false"
+  );
+
+  // Clique no botão abre/fecha
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (menu.classList.contains("active")) {
+      close();
+    } else {
+      open();
+    }
+  });
+
+  // Clique fora fecha
+  document.addEventListener("click", (e) => {
+    if (!menu.classList.contains("active")) return;
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+
+  // ESC fecha
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+
+  // Ao redimensionar para desktop, garante fechado
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) close();
+  });
+}
