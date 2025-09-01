@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eric28012.github.io/diviflex//sitemap.xml
