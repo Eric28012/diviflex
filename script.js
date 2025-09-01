@@ -2,7 +2,7 @@
    CONFIGURAÇÕES GERAIS
    --------------------------------------------------------- */
 // Número do WhatsApp (com DDI + DDD, sem sinais)
-const WHATS_NUMBER = "5511992423233";
+const WHATS_NUMBER = "5541996199100";
 
 // Mensagem padrão para o botão/link do WhatsApp
 const WHATS_MSG = "Olá, vim do site e gostaria de saber mais sobre as divisórias sanfonadas.";

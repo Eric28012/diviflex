@@ -2,63 +2,94 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Diviflex</title>
-  <meta name="description" content="Divisórias sanfonadas sob medida. Leves, práticas e elegantes. Orçamento gratuito e atendimento rápido via WhatsApp." />
 
+  <!-- ================== PERFORMANCE & FONTS ================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
+  <!-- ================== LIBS DE TERCEIROS (CSS) ================== -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ================== CSS DO SITE ================== -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ================== VIEWPORT / META BÁSICO ================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diviflex • Divisórias Sanfonadas Sob Medida - Brasil</title>
+  <meta name="description" content="Instalação rápida, sob medida para seu vão/altura e diversas cores. Solicite orçamento pelo WhatsApp e receba atendimento ágil.">
+
+  <!-- ================== SEO CANONICAL ================== -->
+  <!-- Troque se for usar domínio próprio -->
+  <link rel="canonical" href="https://eric28012.github.io/diviflex/">
+
+  <!-- ================== OPEN GRAPH ================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Diviflex • Divisórias Sanfonadas Sob Medida - Brasil">
+  <meta property="og:description" content="Instalação rápida, sob medida e com acabamento profissional.">
+  <meta property="og:url" content="https://eric28012.github.io/diviflex/">
+  <meta property="og:image" content="https://eric28012.github.io/diviflex/img/sanfonada1.jpg">
+
 </head>
 <body>
-  <!-- Header -->
+
+  <!-- ================== HEADER (NAVBAR) ================== -->
   <header>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <div class="container nav">
-    <div class="brand">
-      <img src="img/logos/diviflex.jpg" alt="Logo Diviflex" class="brand__logo-img">
-      <span>Easyflex • Divisórias Sanfonadas</span>
-    </div>
-
-    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <nav class="nav__menu" id="nav-menu">
-      <a href="#beneficios">Benefícios</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#especificacoes">Especificações</a>
-      <a href="#quem-somos">Quem Somos</a>
-      <a href="https://wa.me/5511999999999?text=Olá, gostaria de um orçamento de divisória sanfonada." 
-         class="btn" target="_blank" rel="noopener">Orçamento</a>
-
-      <div class="nav__social">
-        <a href="https://www.instagram.com/diviflex_divisorias/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/p/Diviflex-Divisorias-Articuladas-100043116384771/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/company/diviflex/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <div class="container nav">
+      <!-- Marca -->
+      <div class="brand">
+        <img src="img/logos/diviflex.jpg" alt="Logo Diviflex" class="brand__logo-img" width="80" height="80" loading="lazy" decoding="async">
+        <span>Easyflex • Divisórias Sanfonadas</span>
       </div>
-    </nav>
-  </div>
 
+      <!-- Botão mobile -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Menu -->
+      <nav class="nav__menu" id="nav-menu">
+        <a href="#beneficios">Benefícios</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#especificacoes">Especificações</a>
+        <a href="#quem-somos">Quem Somos</a>
+
+        <!-- Link fixo para WhatsApp (mensagem nova, URL-encoded) -->
+        <a href="https://wa.me/5541996199100?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20divis%C3%B3rias%20sanfonadas."
+           class="btn" target="_blank" rel="noopener">Orçamento</a>
+
+        <!-- Sociais -->
+        <div class="nav__social">
+          <a href="https://www.instagram.com/diviflex_divisorias/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/p/Diviflex-Divisorias-Articuladas-100043116384771/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/company/diviflex/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero -->
+  <!-- ================== BANNER APÓS MENU (segue largura do container) ================== -->
+  <div class="menu-banner container">
+    <img src="img/salareuniao.jpg" alt="Divisória sanfonada em sala de reunião"
+         width="1000" height="750" loading="lazy" decoding="async">
+  </div>
+
+  <!-- ================== HERO (CONTEÚDO) ================== -->
   <section class="hero container">
     <div class="hero__wrap">
       <div class="hero__text">
-	<div class="imagem-container">
-	  <img src="img/salareuniao.jpg" alt="imagem">
-	</div>
+        <h1>Divisórias Sanfonadas Sob Medida - Brasil</h1>
         <span class="badge">Divisórias Sanfonadas • Sob medida</span>
         <p>Somos uma equipe comprometida em oferecer um atendimento personalizado e eficiente, do primeiro contato à entrega final.</p>
+
+        <!-- CTAs -->
         <div class="cta">
           <a class="btn primary" id="cta-whats-hero" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
           <a class="btn outline" href="#galeria">Ver fotos</a>
         </div>
+
+        <!-- Pontos -->
         <div class="hero__points">
           <div class="point">✅ <span><b>Qualidade comprovada</b>: clientes com <b>+20 anos</b> sem manutenção</span></div>
           <div class="point">✅ <span><b>Sob medida</b> para seu vão/altura</span></div>
@@ -67,16 +98,19 @@
         </div>
       </div>
     </div>
-    <div class="hero__card" style="border-left:6px solid var(--brown); background:rgba(13,110,253,.1); color:black;">
+
+    <!-- Card “Orçamento rápido e gratuito” -->
+    <div class="hero__card">
       <strong>Orçamento rápido e gratuito</strong>
-      <p style="margin:6px 0 0;color:black">Envie medidas (L x A), cidade/bairro e uma foto do local pelo WhatsApp. Retornamos com sugestões e valores.</p>
+      <p>Envie medidas (L x A), cidade/bairro e uma foto do local pelo WhatsApp. Retornamos com sugestões e valores.</p>
     </div>
   </section>
 
-  <!-- Benefícios -->
+  <!-- ================== BENEFÍCIOS ================== -->
   <section class="section container" id="beneficios">
-    <h2>Por que escolher a Diviflex</h2>
+    <h2>Por que a Diviflex?</h2>
     <p class="lead">Qualidade que atravessa décadas: temos clientes com <b>mais de 20 anos</b> sem necessidade de manutenção.</p>
+
     <div class="grid-3">
       <div class="card"><h3>Leve e compacta</h3><p>Ocupa pouco espaço quando recolhida e não sobrecarrega o vão de instalação.</p></div>
       <div class="card"><h3>Durável</h3><p>Matérias-primas selecionadas e ferragens de alta resistência.</p></div>
@@ -87,196 +121,164 @@
     </div>
   </section>
 
-  <!-- Galeria -->
-<section class="section container" id="galeria">
-  <h2>Galeria</h2>
-  <p class="lead">Aplicações das nossas divisórias sanfonadas.</p>
-  <div class="grid-4">
-    <a class="thumb" href="img/sanfonada4.jpg">
-      <img src="img/sanfonada4.jpg" alt="Divisória sanfonada branca em sala" />
-    </a>
-    <a class="thumb" href="img/sanfonada1.jpg">
-      <img src="img/sanfonada1.jpg" alt="Divisória sanfonada madeira clara" />
-    </a>
-    <a class="thumb" href="img/sanfonada3.jpg">
-      <img src="img/sanfonada3.jpg" alt="Divisória sanfonada em escritório" />
-    </a>
-    <a class="thumb" href="img/sanfonada2.jpg">
-      <img src="img/sanfonada2.jpg" alt="Divisória sanfonada em restaurante" />
-    </a>
-  </div>
-</section>
+  <!-- ================== GALERIA ================== -->
+  <section class="section container" id="galeria">
+    <h2>Galeria (clique para ampliar)</h2>
+    <p class="lead">Aplicações das nossas divisórias sanfonadas.</p>
 
-<!-- Modal Lightbox -->
-<div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img class="lightbox-content" id="lightbox-img" alt="">
-</div>
+    <div class="grid-4">
+      <a class="thumb" href="img/sanfonada4.jpg">
+        <img src="img/sanfonada4.jpg" alt="Divisória sanfonada em sala de eventos" width="1000" height="750" loading="lazy" decoding="async">
+      </a>
 
+      <a class="thumb" href="img/sanfonada1.jpg">
+        <img src="img/sanfonada1.jpg" alt="Divisória sanfonada madeira clara" width="1000" height="750" loading="lazy" decoding="async">
+      </a>
 
-<!-- =================== Numeros de Destaque =================== -->
-<!-- ============= SOBRE + CONTADORES (puro) ============= -->
+      <a class="thumb" href="img/sanfonada3.jpg">
+        <img src="img/sanfonada3.jpg" alt="Divisória sanfonada madeira clara" width="1000" height="750" loading="lazy" decoding="async">
+      </a>
 
-<section class="section container about-block" id="sobre">
-  <!-- linha 1: título / logo / texto -->
-  <div class="about-grid">
-    
-    <!-- Coluna 1: Título -->
-    <div class="about-col">
-      <h3 class="about-title">
-        Criando soluções inteligentes em divisórias desde 1989
-      </h3>
+      <a class="thumb" href="img/sanfonada2.jpg">
+        <img src="img/sanfonada2.jpg" alt="Divisória sanfonada madeira clara" width="1000" height="750" loading="lazy" decoding="async">
+      </a>
     </div>
+  </section>
 
-    <!-- Coluna 2: LOGO (centralizado visualmente) -->
-    <div class="about-col about-logo-wrap">
-      <img src="img/logos/diviflex.jpg" alt="Submarca Diviflex" class="about-logo" loading="lazy">
-    </div>
-
-    <!-- Coluna 3: Texto -->
-    <div class="about-col">
-      <p class="about-text">
-        Somos uma equipe comprometida em oferecer um atendimento personalizado e eficiente, 
-        desde o primeiro contato até a entrega final, para que nossos clientes tenham a 
-        melhor experiência possível com nossos produtos e serviços.
-      </p>
-    </div>
-
+  <!-- ================== LIGHTBOX (MODAL DA GALERIA) ================== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Visualização de imagem ampliada">
+    <span class="close" role="button" tabindex="0" aria-label="Fechar">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="">
   </div>
 
-  <!-- linha 2: contadores -->
-  <div class="counters-grid">
-    <article class="counter-card">
-      <div class="counter-title">Instalações Realizadas</div>
-      <div class="counter-line">
-        <span class="counter-prefix">+</span>
-        <span class="counter-num" data-target="10000" data-duration="2000">0</span>
+  <!-- ================== SOBRE + CONTADORES ================== -->
+  <section class="section container about-block" id="sobre">
+    <div class="about-grid">
+      <!-- Coluna 1: Título -->
+      <div class="about-col">
+        <h3 class="about-title">Criando soluções inteligentes em divisórias desde 1989</h3>
       </div>
-    </article>
 
-    <article class="counter-card">
-      <div class="counter-title">Anos de Experiência</div>
-      <div class="counter-line">
-        <span class="counter-num" data-target="34" data-duration="2000">0</span>
+      <!-- Coluna 2: LOGO -->
+      <div class="about-col about-logo-wrap">
+        <img src="img/logos/diviflex.jpg" alt="Submarca Diviflex" class="about-logo" loading="lazy" decoding="async">
       </div>
-    </article>
 
-    <article class="counter-card">
-      <div class="counter-title">Anos de Garantia</div>
-      <div class="counter-line">
-        <span class="counter-num" data-target="10" data-duration="2000">0</span>
+      <!-- Coluna 3: Texto -->
+      <div class="about-col">
+        <p class="about-text">
+          Somos uma equipe comprometida em oferecer um atendimento personalizado e eficiente,
+          desde o primeiro contato até a entrega final, para que nossos clientes tenham a
+          melhor experiência possível com nossos produtos e serviços.
+        </p>
       </div>
-    </article>
-  </div>
-</section>
-
-
-<!-- ============= /SOBRE + CONTADORES ============= -->
-
-
-
-
-<!-- =================== PROVA SOCIAL (Feedbacks em cima + Logos embaixo) =================== -->
-<section class="section container sp-wrapper" id="social-proof" aria-label="Prova social">
-  <div class="sp-head">
-    <div class="sp-titles">
-      <h2>Depoimentos</h2>
-      <p class="lead">Confira depoimentos por parte dos nossos clientes.</p>
     </div>
-  </div>
 
-  <!-- Depoimentos (carrossel) -->
-  <div class="sp-testimonials card">
-    <div class="testimonials-swiper swiper" aria-label="Depoimentos de clientes">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <article class="t-card">
-            <div class="t-head">
-              <img class="t-stars" src="img/logos/estrelas.jpg" alt="Avaliação 5 estrelas" loading="lazy">
-            </div>
-            <h4 class="t-title">“Instalação rápida e acabamento impecável.”</h4>
-            <p class="t-text">Do orçamento à instalação, tudo muito ágil e bem feito. A divisória ficou perfeita.</p>
-            <div class="t-meta">
-              <strong>Mariana Silva</strong>
-              <small>Advogada</small>
-            </div>	
-            <img class="t-bar" src="img/logos/barra.jpg" alt="Barra decorativa" loading="lazy">	
-          </article>
+    <!-- Contadores -->
+    <div class="counters-grid">
+      <article class="counter-card">
+        <div class="counter-title">Instalações Realizadas</div>
+        <div class="counter-line">
+          <span class="counter-prefix">+</span>
+          <span class="counter-num" data-target="10000" data-duration="2000">0</span>
         </div>
+      </article>
 
-        <div class="swiper-slide">
-          <article class="t-card">
-            <div class="t-head">
-              <img class="t-stars" src="img/logos/estrelas.jpg" alt="Avaliação 5 estrelas" loading="lazy">
-            </div>
-            <h4 class="t-title">“Privacidade acústica para a clínica.”</h4>
-            <p class="t-text">Garantiu conforto aos pacientes sem obra complexa. Excelente custo-benefício.</p>
-            <div class="t-meta">
-              <strong>Rodrigo Santos</strong>
-              <small>Médico</small>
-            </div>
-            <img class="t-bar" src="img/logos/barra.jpg" alt="Barra decorativa" loading="lazy">
-          </article>
+      <article class="counter-card">
+        <div class="counter-title">Anos de Experiência</div>
+        <div class="counter-line">
+          <span class="counter-num" data-target="34" data-duration="2000">0</span>
         </div>
+      </article>
 
-        <div class="swiper-slide">
-          <article class="t-card">
-            <div class="t-head">
-              <img class="t-stars" src="img/logos/estrelas.jpg" alt="Avaliação 5 estrelas" loading="lazy">
-            </div>
-            <h4 class="t-title">“Organizei melhor minha loja.”</h4>
-            <p class="t-text">Separou atendimento e estoque sem quebradeira. Acabamento ótimo.</p>
-            <div class="t-meta">
-              <strong>Ana Paula</strong>
-              <small>Empresária</small>             
-            </div>
-            <img class="t-bar" src="img/logos/barra.jpg" alt="Barra decorativa" loading="lazy">
-          </article>
+      <article class="counter-card">
+        <div class="counter-title">Anos de Garantia</div>
+        <div class="counter-line">
+          <span class="counter-num" data-target="10" data-duration="2000">0</span>
         </div>
+      </article>
+    </div>
+  </section>
 
-        <div class="swiper-slide">
-          <article class="t-card">
-            <div class="t-head">
-              <img class="t-stars" src="img/logos/estrelas.jpg" alt="Avaliação 5 estrelas" loading="lazy">
-            </div>
-            <h4 class="t-title">“Perfeito para coworking.”</h4>
-            <p class="t-text">Dividimos o espaço mantendo privacidade e boa acústica. Ótimo investimento.</p>
-            <div class="t-meta">
-              <strong>Rafael Oliveira</strong>
-              <small>Arquiteto</small>
+  <!-- ================== PROVA SOCIAL (DEPOIMENTOS + LOGOS) ================== -->
+  <section class="section container sp-wrapper" id="social-proof" aria-label="Prova social">
+    <div class="sp-head">
+      <div class="sp-titles">
+        <h2>Depoimentos</h2>
+        <p class="lead">Confira depoimentos por parte dos nossos clientes.</p>
+      </div>
+    </div>
+
+    <!-- Carrossel de depoimentos -->
+    <div class="sp-testimonials card">
+      <div class="testimonials-swiper swiper" aria-label="Depoimentos de clientes">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <article class="t-card">
+              <div class="t-head"><img class="t-stars" src="img/logos/estrelas.jpg" alt="Avaliação 5 estrelas" loading="lazy"></div>
+              <h4 class="t-title">“Instalação rápida e acabamento impecável.”</h4>
+              <p class="t-text">Do orçamento à instalação, tudo muito ágil e bem feito. A divisória ficou perfeita.</p>
+              <div class="t-meta"><strong>Mariana Silva</strong><small>Advogada</small></div>
               <img class="t-bar" src="img/logos/barra.jpg" alt="Barra decorativa" loading="lazy">
-            </div>
-          </article>
+            </article>
+          </div>
+
+          <div class="swiper-slide">
+            <article class="t-card">
+              <div class="t-head"><img class="t-stars" src="img/logos/estrelas.jpg" alt="Avaliação 5 estrelas" loading="lazy"></div>
+              <h4 class="t-title">“Privacidade acústica para a clínica.”</h4>
+              <p class="t-text">Garantiu conforto aos pacientes sem obra complexa. Excelente custo-benefício.</p>
+              <div class="t-meta"><strong>Rodrigo Santos</strong><small>Médico</small></div>
+              <img class="t-bar" src="img/logos/barra.jpg" alt="Barra decorativa" loading="lazy">
+            </article>
+          </div>
+
+          <div class="swiper-slide">
+            <article class="t-card">
+              <div class="t-head"><img class="t-stars" src="img/logos/estrelas.jpg" alt="Avaliação 5 estrelas" loading="lazy"></div>
+              <h4 class="t-title">“Organizei melhor minha loja.”</h4>
+              <p class="t-text">Separou atendimento e estoque sem quebradeira. Acabamento ótimo.</p>
+              <div class="t-meta"><strong>Ana Paula</strong><small>Empresária</small></div>
+              <img class="t-bar" src="img/logos/barra.jpg" alt="Barra decorativa" loading="lazy">
+            </article>
+          </div>
+
+          <div class="swiper-slide">
+            <article class="t-card">
+              <div class="t-head"><img class="t-stars" src="img/logos/estrelas.jpg" alt="Avaliação 5 estrelas" loading="lazy"></div>
+              <h4 class="t-title">“Perfeito para coworking.”</h4>
+              <p class="t-text">Dividimos o espaço mantendo privacidade e boa acústica. Ótimo investimento.</p>
+              <div class="t-meta"><strong>Rafael Oliveira</strong><small>Arquiteto</small></div>
+              <img class="t-bar" src="img/logos/barra.jpg" alt="Barra decorativa" loading="lazy">
+            </article>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Logos (carrossel contínuo) -->
-  <div class="sp-logos card">
-    <div class="logos-swiper swiper" aria-label="Logos de clientes">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="img/logos/cocacola.jpg" alt="Coca-Cola" loading="lazy"></div>
-        <div class="swiper-slide"><img src="img/logos/petrobras.jpg" alt="Petrobras" loading="lazy"></div>
-        <div class="swiper-slide"><img src="img/logos/claro.jpg" alt="Claro" loading="lazy"></div>
-        <div class="swiper-slide"><img src="img/logos/fam.jpg" alt="FAM" loading="lazy"></div>
-        <div class="swiper-slide"><img src="img/logos/mackenzie.jpg" alt="Mackenzie" loading="lazy"></div>
-        <div class="swiper-slide"><img src="img/logos/bradesco.jpg" alt="Bradesco" loading="lazy"></div>
-        <div class="swiper-slide"><img src="img/logos/bic.jpg" alt="BIC" loading="lazy"></div>
-        <div class="swiper-slide"><img src="img/logos/unilever.jpg" alt="Unilever" loading="lazy"></div>
+    <!-- Carrossel de logos -->
+    <div class="sp-logos card">
+      <div class="logos-swiper swiper" aria-label="Logos de clientes">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img/logos/cocacola.jpg" alt="Coca-Cola" loading="lazy"></div>
+          <div class="swiper-slide"><img src="img/logos/petrobras.jpg" alt="Petrobras" loading="lazy"></div>
+          <div class="swiper-slide"><img src="img/logos/claro.jpg" alt="Claro" loading="lazy"></div>
+          <div class="swiper-slide"><img src="img/logos/fam.jpg" alt="FAM" loading="lazy"></div>
+          <div class="swiper-slide"><img src="img/logos/mackenzie.jpg" alt="Mackenzie" loading="lazy"></div>
+          <div class="swiper-slide"><img src="img/logos/bradesco.jpg" alt="Bradesco" loading="lazy"></div>
+          <div class="swiper-slide"><img src="img/logos/bic.jpg" alt="BIC" loading="lazy"></div>
+          <div class="swiper-slide"><img src="img/logos/unilever.jpg" alt="Unilever" loading="lazy"></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- =================== /PROVA SOCIAL =================== -->
+  </section>
 
-
-<!-- =================== /ESPECIFICAÇÕES =================== -->
-
-
-<section class="section container" id="especificacoes">
+  <!-- ================== ESPECIFICAÇÕES ================== -->
+  <section class="section container" id="especificacoes">
     <h2>Especificações e opções</h2>
+
     <div class="specs">
+      <!-- Card 1 -->
       <div class="card">
         <h3>Acabamentos e cores</h3>
         <div class="list">
@@ -287,21 +289,28 @@
           <span class="chip">Cinza</span>
           <span class="chip">Sob consulta</span>
         </div>
+
         <hr style="margin:16px 0;border:none;border-top:1px solid #eef2f4">
+
         <h3>Fabricação</h3>
         <p style="color:#475569;margin-top:6px">Sob medida conforme largura e altura do vão, com opções de trilho superior e fechadura.</p>
       </div>
+
+      <!-- Card 2 -->
       <div class="card">
         <h3>Onde usar</h3>
         <p class="lead" style="margin:6px 0 12px">Residências, clínicas, consultórios, salas multiuso, restaurantes, escolas, igrejas e escritórios.</p>
+
         <details>
           <summary>Como pedir orçamento?</summary>
           <p style="margin-top:8px;color:#475569">Clique em <b>Falar no WhatsApp</b> e envie: (1) medidas (L x A), (2) cidade/bairro, (3) foto do local.</p>
         </details>
+
         <details>
           <summary>Qual o prazo?</summary>
           <p style="margin-top:8px;color:#475569">Prazo médio informado no orçamento conforme agenda e complexidade.</p>
         </details>
+
         <details>
           <summary>Tem garantia?</summary>
           <p style="margin-top:8px;color:#475569">Sim. Garantia de fábrica de até 10 anos, com instalação profissional Diviflex.</p>
@@ -310,17 +319,18 @@
     </div>
   </section>
 
-
-<div class="cta-band">
-      <div>
-        <h3 style="margin:0 0 6px">Pronto para transformar seu ambiente?</h3>
-        <p style="margin:0;opacity:.9">Atendimento rápido via WhatsApp. Envie as medidas e receba seu orçamento.</p>
-      </div>
-      <a class="btn" id="cta-whats-band" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20quero%20um%20or%C3%A7amento%20de%20divis%C3%B3ria%20sanfonada." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+  <!-- ================== CTA (FAIXA) ================== -->
+  <div class="cta-band">
+    <div>
+      <h3 style="margin:0 0 6px">Pronto para transformar seu ambiente?</h3>
+      <p style="margin:0;opacity:.9">Atendimento rápido via WhatsApp. Envie as medidas e receba seu orçamento.</p>
     </div>
+    <a class="btn" id="cta-whats-band"
+       href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20divis%C3%B3rias%20sanfonadas."
+       target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+  </div>
 
-
-  <!-- Floating WhatsApp Button -->
+  <!-- ================== BOTÃO FLOTANTE WHATSAPP ================== -->
   <div class="whatsapp">
     <a class="wa-btn" id="wa-float" href="#" target="_blank" rel="noopener" aria-label="Falar com Diviflex pelo WhatsApp">
       <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -330,97 +340,151 @@
     </a>
   </div>
 
-
-  <!-- JS separado -->
-  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
-
-  <!-- (mantém Especificações, CTA, Feedbacks, Mapa e Footer como no arquivo original) -->
-
-<!-- =================== /QUEM SOMOS =================== -->
-
-<section class="sobre-nos" id="quem-somos">
-  <div class="container">
-    <h2 class="about-title">Quem Somos</h2>
-    <p>
-      A <strong>Diviflex</strong> foi fundada em 1989 com o objetivo de oferecer produtos diferenciados 
-      no mercado brasileiro de divisórias sanfonadas. Ao longo de mais de 34 anos, conquistamos a confiança 
-      de clientes de diversos segmentos, sempre prezando por qualidade, durabilidade e atendimento próximo.
-    </p>
-  </div>
-</section>
-
-<section class="contato" id="contato">
-  <div class="container contato-grid">
-    
-    <!-- Coluna Esquerda - Informações -->
-    <div class="contato-info">
-      <h3>Contato</h3>
+  <!-- ================== QUEM SOMOS ================== -->
+  <section class="sobre-nos" id="quem-somos">
+    <div class="container">
+      <h2 class="about-title">Quem Somos</h2>
       <p>
-        📞 <strong>Telefone:</strong> <a href="tel:+5511992423233">(11) 99242-3233</a><br> 
-        ✉️ <strong>Email:</strong> <a href="mailto:diviflex@diviflex.com.br">diviflex@diviflex.com.br</a><br> 
-        📍 <strong>Endereço:</strong> Rua Mario Dias, 50<br>Jardim Trussardi, São Paulo – SP<br> CEP: 05519-110
+        A <strong>Diviflex</strong> foi fundada em 1989 com o objetivo de oferecer produtos diferenciados
+        no mercado brasileiro de divisórias sanfonadas. Ao longo de mais de 34 anos, conquistamos a confiança
+        de clientes de diversos segmentos, sempre prezando por qualidade, durabilidade e atendimento próximo.
       </p>
     </div>
+  </section>
 
-    <!-- Coluna Direita - Formulário -->
-    <div class="contato-form">
-      <h3>Envie uma Mensagem</h3>
-      <form class="contact-form" action="mailto:diviflex@diviflex.com.br" method="post" enctype="text/plain">
-        <div class="form-group">
-          <input type="text" name="nome" placeholder="Seu nome" required>
-        </div>
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Seu e-mail" required>
-        </div>
-        <div class="form-group">
-          <textarea name="mensagem" rows="4" placeholder="Sua mensagem" required></textarea>
-        </div>
-        <button type="submit" class="btn primary">Enviar</button>
-      </form>
+  <!-- ================== CONTATO ================== -->
+  <section class="contato" id="contato">
+    <div class="container contato-grid">
+
+      <!-- Coluna Esquerda - Informações -->
+      <div class="contato-info">
+        <h3>Contato</h3>
+        <p>
+          📞 <strong>Telefone:</strong> <a href="tel:+5511992423233">(11) 99242-3233</a><br>
+          ✉️ <strong>Email:</strong> <a href="mailto:diviflex@diviflex.com.br">diviflex@diviflex.com.br</a><br>
+          📍 <strong>Endereço:</strong> Estrada Da Mina de Ouro, 912<br>Itararé, Embu-Guaçu – SP<br> CEP: 06900-000
+        </p>
+      </div>
+
+      <!-- Coluna Direita - Formulário -->
+      <div class="contato-form">
+        <h3>Envie uma Mensagem</h3>
+        <form class="contact-form" action="mailto:diviflex@diviflex.com.br" method="post" enctype="text/plain">
+          <div class="form-group">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+          </div>
+          <div class="form-group">
+            <textarea name="mensagem" rows="4" placeholder="Sua mensagem" required></textarea>
+          </div>
+          <button type="submit" class="btn primary">Enviar</button>
+        </form>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
-
-
-
-
-<footer class="site-footer container">
-  <div class="footer-brand-group">
-    <div class="brand-footer">
-      <img src="img/logos/diviflex.jpg" alt="Logo Diviflex" class="brand__logo-img">
-      <span>Diviflex • Divisórias Acústicas</span>
+  <!-- ================== RODAPÉ ================== -->
+  <footer class="site-footer container">
+    <div class="footer-brand-group">
+      <div class="brand-footer">
+        <img src="img/logos/diviflex.jpg" alt="Logo Diviflex" class="brand__logo-img" width="80" height="80" loading="lazy" decoding="async">
+        <span>Diviflex • Divisórias Acústicas</span>
+      </div>
+      <p class="footer-copy">
+        Diviflex Divisorias LTDA - CNPJ: 61.633.244/0001-04 © <span id="year"></span> Diviflex. Todos os direitos reservados.
+      </p>
     </div>
-    <p class="footer-copy">© <span id="year-footer"></span> Diviflex. Todos os direitos reservados.</p>
-  </div>
-</footer>
+  </footer>
 
-
-
-
-
-  <!-- SEO / Schema.org -->
+  <!-- ================== SEO / SCHEMA.ORG ================== -->
+  <!-- Troque SEU-DOMINIO quando usar domínio próprio; no GH Pages, use a URL completa do repositório -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
+    "@id": "https://eric28012.github.io/diviflex/#org",
     "name": "Diviflex",
-    "description": "Divisórias sanfonadas sob medida com instalação profissional.",
-    "areaServed": "São Paulo",
-    "url": "https://diviflex.com.br/",
-    "telephone": "+55 11 99999-9999",
-    "brand": "Diviflex",
-    "sameAs": ["https://wa.me/5511999999999"],
-    "makesOffer": {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Product",
-        "name": "Divisória Sanfonada",
-        "description": "Divisórias sanfonadas sob medida, várias cores e acabamentos."
-      }
-    }
+    "url": "https://SEU-DOMINIO/",
+    "logo": "https://SEU-DOMINIO/img/logos/diviflex.jpg",
+    "image": [
+      "https://eric28012.github.io/diviflex/img/sanfonada1.jpg",
+      "https://eric28012.github.io/diviflex/img/sanfonada2.jpg",
+      "https://eric28012.github.io/diviflex/img/sanfonada3.jpg"
+    ],
+    "description": "Divisórias sanfonadas sob medida com instalação profissional em São Paulo e região.",
+    "telephone": "+55 11 99242-3233",
+    "email": "diviflex@diviflex.com.br",
+    "priceRange": "$$",
+    "foundingDate": "1989",
+    "sameAs": [
+      "https://www.instagram.com/diviflex_divisorias/",
+      "https://www.facebook.com/p/Diviflex-Divisorias-Articuladas-100043116384771/",
+      "https://www.linkedin.com/company/diviflex/",
+      "https://wa.me/5511992423233"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Mario Dias, 50",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "postalCode": "05519-110",
+      "addressCountry": "BR"
+    },
+    "areaServed": [ "São Paulo - Capital", "Grande São Paulo", "Interior de SP" ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }],
+    "geo": { "@type": "GeoCoordinates", "latitude": -23.57, "longitude": -46.72 },
+    "knowsAbout": [
+      "divisória sanfonada", "divisória articulada", "divisória acústica",
+      "separação de ambientes", "trilho superior para divisória"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Catálogo de Divisórias",
+      "itemListElement": [{
+        "@type": "Offer",
+        "name": "Divisória Sanfonada sob medida",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Divisória Sanfonada",
+          "description": "Fabricada sob medida (L x A), diversas cores, instalação rápida."
+        },
+        "availability": "http://schema.org/InStock"
+      }]
+    },
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+55 11 99242-3233",
+      "areaServed": "BR"
+    }]
   }
   </script>
+
+  <!-- (Opcional) WebSite: ajuda o Google a entender o site como um todo -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "@id":"https://eric28012.github.io/diviflex/#website",
+    "url":"https://eric28012.github.io/diviflex/",
+    "name":"Diviflex",
+    "publisher":{"@id":"https://eric28012.github.io/diviflex/#org"}
+  }
+  </script>
+
+  <!-- ================== JS (LIBS) ================== -->
+  <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js" defer></script>
+
+  <!-- ================== JS (SITE) ================== -->
+  <!-- Seu script já seta links do WhatsApp, ano do rodapé, menu mobile, lightbox, etc. -->
+  <script src="script.js" defer></script>
 </body>
 </html>
